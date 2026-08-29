@@ -29,5 +29,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
+
+# models:
+#   airbnb: 
+# or dbtlearn
+
 models:
   airbnb:
+    +materialized: view
+    dim:
+      +materialized: table
+    src:
+      +materialized: ephemeral
+      
