@@ -1,4 +1,7 @@
 models:
+
+# ------- dim_listings_cleansed -------
+
   - name: dim_listings_cleansed
     columns:
 
@@ -20,3 +23,58 @@ models:
           - accepted_values:
               arguments:
                 values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+
+# ------- dim_hosts_cleansed -------
+
+  - name: dim_hosts_cleansed
+  
+    config:
+      contract: 
+        enforced: true
+
+    columns:
+
+      - name: host_id
+        data_type: integer
+        data_tests:
+          - unique
+          - not_null
+
+      - name: host_name
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: is_superhost
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t', 'f']
+
+      - name: created_at
+        data_type: timestamp
+
+      - name: updated_at
+        data_type: timestamp
+
+# ------- fct_reviews -------
+
+  - name: fct_reviews
+    columns:
+
+      - name: listing_id
+        data_tests:
+          - not_null
+      
+      - name: review_text
+        data_tests:
+          - not_null
+      
+      - name: review_sentiment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['positive', 'neutral', 'negative']
+
+                

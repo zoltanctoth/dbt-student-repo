@@ -11,6 +11,7 @@ SELECT
     HOST_ID, 
     NVL(HOST_NAME, 'Anonymous') as HOST_NAME, 
     IS_SUPERHOST, 
+    -- IFF(is_superhost = 't', TRUE, FALSE) as IS_SUPERHOST, 
     CREATED_AT, 
     UPDATED_AT
 FROM 
