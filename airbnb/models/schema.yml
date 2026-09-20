@@ -3,6 +3,12 @@ models:
 # ------- dim_listings_cleansed -------
 
   - name: dim_listings_cleansed
+    data_tests:
+      - minimum_row_count:
+          arguments:
+            min_row_count: 1_000
+          severity: error
+
     columns:
 
       - name: listing_id
@@ -23,6 +29,10 @@ models:
           - accepted_values:
               arguments:
                 values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+      
+      - name: minimum_nights
+        data_tests:
+          - positive_values
 
 # ------- dim_hosts_cleansed -------
 
@@ -31,17 +41,24 @@ models:
     config:
       contract: 
         enforced: true
+    constraints:
+      - type: primary_key
+        columns: [host_id]
 
     columns:
-
       - name: host_id
         data_type: integer
+        constraints:
+          - type: not_null
+          - type: unique
         data_tests:
           - unique
           - not_null
 
       - name: host_name
         data_type: string
+        constraints:
+          - type: not_null
         data_tests:
           - not_null
 
