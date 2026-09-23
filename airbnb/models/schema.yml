@@ -1,0 +1,116 @@
+
+# video:39 Data test Overview
+models:
+  - name: dim_listings_cleansed
+#Video:48 customn generic tests with parameters
+#Below data Tests are as part of customn tests with parameters to check minimum row count (till row number-8 only video:48 applicable) 
+    data_tests:
+      - minimum_row_count:
+          arguments:
+            min_row_count: 1000
+#--------------------------------------------- Till this line video:48 applicable 
+
+#video:49 Setting test severity : warn or error            
+         #severity: warn # we have configured severity='warn' in minimum_row_count.sql file but we can also configure severity='warn' here in schema.yml file. 
+          severity: error # If we configure severity='error' here in schema.yml file then it will override the severity='warn' in minimum_row_count.sql file and it will throw error if the test fails.
+#--------------------------------------------- Till this line video:49 applicable   
+
+    columns:
+      - name: listing_id
+        data_tests:
+          - unique
+          - not_null
+      - name: host_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_hosts_cleansed')
+                field: host_id
+      - name: room_type
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+
+      # video:47 Custom Generic Test --> positive values
+      - name: minimum_nights
+        data_tests:
+          - positive_values #this is a custom generic test which is created in tests/generic/positive_values.sql file
+
+
+
+  - name: dim_hosts_cleansed
+ #Video:50 dbt constraints concept is used to enforce the schema of a model. for every column in dim_hosts_cleansed model we have defined constraints like not_null, unique, primary_key etc. and dbt will enforce these constraints on the model.
+ #Note: If we add constraints for columns no need to add data_test for those columns in schema.yml file in Production environment because dbt will enforce the constraints on the model and if any constraint fails then it will throw an error. 
+    config:
+      contract:
+        enforced: true
+#(video:50)applied constraints(Primary_key) for host_id column in dim_hosts_cleansed model .code till next 3 lines             
+    constraints:
+    - type: primary_key
+      columns: [host_id]
+
+    columns:
+      - name: host_id
+        data_type: integer
+#(video:50)applied constraints(type) for host_id column in dim_hosts_cleansed model .code till next 3 lines       
+        constraints:
+          - type: not_null
+          - type: unique
+           
+        data_tests:
+          - unique
+          - not_null
+      - name: host_name
+        data_type: string
+#(video:50)applied constraints(type) for host_name column in dim_hosts_cleansed model .code till next 2 lines           
+        constraints:
+          - type: not_null
+          
+        data_tests:
+          - not_null
+      - name: is_superhost
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t', 'f']
+
+
+  - name: fct_reviews
+    columns:
+      - name: listing_id
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_listings_cleansed')
+                field: listing_id
+      - name: reviewer_name
+        data_tests:
+          - not_null
+      - name: review_sentiment
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['positive', 'neutral', 'negative', 'Positive']
+
+
+# Video:46
+# Data contracts concept is used to enforce the schema of a model.
+# Data contracts concept on dim_hosts_cleansed model
+  - name: dim_hosts_cleansed
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: HOST_ID
+        data_type: integer
+      - name: HOST_NAME
+        data_type: string
+      - name: IS_SUPERHOST
+        data_type: string
+      - name: CREATED_AT
+        data_type: timestamp
+      - name: UPDATED_AT
+        data_type: timestamp
+      
