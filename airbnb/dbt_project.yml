@@ -1,0 +1,73 @@
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'udemy_dbt_course'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'airbnb'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+
+on-run-start:
+  - "CREATE TABLE IF NOT EXISTS {{ target.schema }}.audit_log ( model_name STRING, run_timestamp TIMESTAMP )"
+  - '{{ log("I will stop at the first sign of trouble", info = true) if flags.FAIL_FAST }}'
+
+models:
+  udemy_dbt_course:
+    +grants:
+      select: ["transform", "reporter"]
+    +post-hook:
+      - "INSERT INTO {{ target.schema }}.audit_log VALUES ('{{this}}', CURRENT_TIMESTAMP)"
+    #  - "GRANT SELECT {{ this }}"
+    # Config by + below applies to all models files, unless mentioed for a folder otherwise!
+    +materialized: view
+    +static_analysis: strict # You need this for COlun Lineage!
+    src:
+    # src_hosts is materialized: ephemeral, and ephemeral models never get compiled into an actual database object — 
+    # they're inlined as a CTE into whatever downstream model references them, with no database.schema.table identifier of their own. 
+    # Column-level lineage in Fusion needs a resolvable relation for every node it renders in the graph, so when the lineage view 
+    # tries to trace back through src_hosts to draw the full picture, it hits a model with literally nothing to point at. 
+    # This isn't specific to your setup — it's a consistent limitation across essentially every tool that does dbt column lineage 
+    # (dbt's own Explorer/Catalog docs, DataHub, Atlan, Dataedo all document this exact ephemeral-models-have-no-lineage behavior), 
+    # so Fusion's CLL hitting the same wall for ephemeral nodes tracks.
+      +materialized: ephemeral # Change this to view if you need Column Lineage 
+    dim:
+      +materialized: table
+    fct:
+      +tags: ['fact']
+
+data_tests:
+  +store_failures: true
+  +schema: _test_failures
+# elementary-data.com has a great open source component works well with dbt to create dashbaords!
+
+# flags are options that can be applied on all commands and they are for changing the default behaviour of dbt!
+flags:
+  fail_fast: true
+  source_freshness_run_project_hooks: false
+
+  require_generic_test_arguments_property: true
+vars:
+  user_name: default_user_name_for_this_project_defined_in_dbt_project_yml_file!

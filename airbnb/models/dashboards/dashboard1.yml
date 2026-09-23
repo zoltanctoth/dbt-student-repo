@@ -1,0 +1,18 @@
+version: 2
+
+exposures:
+  - name: executive_dashboard      # identifier: no spaces
+    label: Executive Dashboard     # human-friendly display name in docs
+    type: dashboard
+    maturity: low 
+    url: https://6d4c2e2c.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=ojniYbeAXc0
+    description: Executive Dashboard about Airbnb listings and hosts 
+
+    depends_on:
+      - ref('dim_listings_with_hosts')
+      - ref('mart_fullmoon_reviews') 
+      - ref('dim_hosts_cleansed')
+
+    owner:
+      name: Naeim Rf.
+      email: naeimrf@gmail.com
