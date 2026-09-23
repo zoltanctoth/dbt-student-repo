@@ -1,0 +1,9 @@
+==================== 2026-08-04T08:27:45.057107Z | 019fcbe2-c7c8-72d1-b264-69d1cc969ea4 ====================
+08:27:45.088803 [info ]: Installing dbt project and profile setup
+08:27:45.192206 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+08:27:45.197322 [info ]: Success Project created successfully!
+08:27:45.197703 [info ]: Info Project name: airbnb
+08:27:45.199730 [info ]: Info Project directory: airbnb
+08:27:45.571806 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully [514ms]
