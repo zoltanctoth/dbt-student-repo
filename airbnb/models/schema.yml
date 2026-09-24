@@ -3,6 +3,7 @@ models:
 # ------- dim_listings_cleansed -------
 
   - name: dim_listings_cleansed
+    description: Cleansed table which contain Airbnb listings.
     data_tests:
       - minimum_row_count:
           arguments:
@@ -12,11 +13,13 @@ models:
     columns:
 
       - name: listing_id
+        description: Primary key for the listing
         data_tests:
           - unique
           - not_null
       
       - name: host_id
+        description: The host's id. References the host table.
         data_tests:
           - not_null
           - relationships:
@@ -25,44 +28,42 @@ models:
                 field: host_id
 
       - name: room_type
+        description: Type of apartment / room
         data_tests:
           - accepted_values:
               arguments:
                 values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
       
       - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed_minimum_nights") }}'
         data_tests:
           - positive_values
 
 # ------- dim_hosts_cleansed -------
 
   - name: dim_hosts_cleansed
-  
+    description: Cleansed table which contain Airbnb hosts.
     config:
       contract: 
         enforced: true
-    constraints:
-      - type: primary_key
-        columns: [host_id]
 
     columns:
       - name: host_id
+        description: The host id, primary key for this table.
         data_type: integer
         constraints:
           - type: not_null
-          - type: unique
         data_tests:
           - unique
-          - not_null
 
       - name: host_name
+        description: The name of the host.
         data_type: string
         constraints:
           - type: not_null
-        data_tests:
-          - not_null
 
       - name: is_superhost
+        description: t if the hosts reviews are good.
         data_type: string
         data_tests:
           - accepted_values:

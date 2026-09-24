@@ -17,6 +17,8 @@ test-paths: ["tests"]
 seed-paths: ["seeds"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
+
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
@@ -33,9 +35,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # models:
 #   airbnb: 
 # or dbtlearn
+on-run-start:
+  - "CREATE TABLE IF NOT EXISTS {{ target.schema }}.audit_log (
+      model_name STRING,
+      run_timestamp TIMESTAMP
+    )"
 
 models:
   airbnb:
+    +grant: 
+      select: ["transform", "reporter"]
+    +post-hook:
+      - "INSERT INTO {{ target.schema }}.audit_log VALUES ('{{ this }}', CURRENT_TIMESTAMP)"
     +materialized: view
     dim:
       +materialized: table
