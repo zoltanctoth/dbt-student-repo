@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: kaggle_healthcare
+    description: "Banco de dados bruto contendo os registros de saúde da Landing Zone."
+    database: HOSPITAL_DB
+    schema: RAW
+    
+    #  Configurações de freshness e monitoramento agora vivem dentro de config
+    config:
+      freshness:
+        warn_after: {count: 12, period: hour}
+        error_after: {count: 24, period: hour}
+      loaded_at_field: _loaded_at # <-- Movido para dentro do bloco config com sucesso!
+        
+    tables:
+      - name: RAW_HEALTHCARE_DATA
+        description: "Tabela original e achatada com o histórico de internações."

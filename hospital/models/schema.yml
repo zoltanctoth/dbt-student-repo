@@ -1,0 +1,162 @@
+version: 2
+
+models:
+  # =========================================================================
+  # 🏥 CAMADA DIMENSÃO (DIM)
+  # =========================================================================
+  
+  - name: dim_patients
+    description: "Tabela dimensão contendo informações cadastrais de pacientes com classificação etária."
+    columns:
+      - name: patient_id
+        description: "Chave primária do paciente gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+      - name: patient_gender
+        description: "Gênero do paciente padronizado."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['MALE', 'FEMALE', 'NÃO ESPECIFICADO']
+      - name: age_group
+        description: "Classificação por faixa etária baseada na idade do paciente."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['CRIANÇA/ADOLESCENTE', 'ADULTO', 'IDOSO', 'NÃO INFORMADO']
+
+  - name: dim_doctors
+    description: "Tabela dimensão contendo o corpo clínico (médicos) cadastrados no hospital."
+    config:
+      contract:
+        enforced: true # 
+    columns:
+      - name: doctor_id
+        data_type: varchar 
+        description: "Chave primária do médico gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+      - name: doctor_name
+        data_type: varchar
+        description: "Nome do médico padronizado, limpo e com tratamento de nulos via macro."
+
+      - name: data_carga_registro
+        data_type: timestamp_ltz
+        description: "Data e hora UTC em que o registro foi processado pelo dbt."
+
+  - name: dim_hospitals
+    description: "Tabela dimensão contendo a lista consolidada e padronizada de hospitais da rede."
+    columns:
+      - name: hospital_id
+        description: "Chave primária do hospital gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_insurance_providers
+    description: "Tabela dimensão contendo as operadoras de plano de saúde parceiras da instituição."
+    columns:
+      - name: insurance_provider_id
+        description: "Chave primária do plano de saúde gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_medications
+    description: "Tabela dimensão contendo os medicamentos prescritos nas internações."
+    columns:
+      - name: medication_id
+        description: "Chave primária do medicamento gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_test_results
+    description: "Tabela dimensão contendo os tipos possíveis de resultados de exames clínicos."
+    columns:
+      - name: test_result_id
+        description: "Chave primária do resultado do exame gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+
+  # =========================================================================
+  # 📊 CAMADA FATO (FCT)
+  # =========================================================================
+
+  - name: fct_admissions
+    description: "Tabela fato centralizadora de eventos de internação hospitalar contendo chaves e métricas financeiras/operacionais."
+    columns:
+      - name: admission_id
+        description: "Chave primária da internação gerada via hash MD5."
+        tests:
+          - unique
+          - not_null
+
+      - name: patient_id
+        description: "Chave estrangeira conectando à tabela dim_patients."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_patients')
+                field: patient_id
+
+      - name: doctor_id
+        description: "Chave estrangeira conectando à tabela dim_doctors."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_doctors')
+                field: doctor_id
+
+      - name: hospital_id
+        description: "Chave estrangeira conectando à tabela dim_hospitals."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_hospitals')
+                field: hospital_id
+
+      - name: insurance_provider_id
+        description: "Chave estrangeira conectando à tabela dim_insurance_providers."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_insurance_providers')
+                field: insurance_provider_id
+
+      - name: medication_id
+        description: "Chave estrangeira conectando à tabela dim_medications."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_medications')
+                field: medication_id
+
+      - name: test_result_id
+        description: "Chave estrangeira conectando à tabela dim_test_results."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_test_results')
+                field: test_result_id
+
+      - name: billing_amount
+        description: "Valor total faturado no evento de internação."
+        tests:
+          - not_null
+
+      - name: length_of_stay_days
+        description: "Métrica calculada do tempo total de estadia do paciente (em dias)."
+        tests:
+          - not_null

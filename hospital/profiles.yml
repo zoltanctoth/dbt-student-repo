@@ -1,0 +1,17 @@
+hospital:
+  outputs:
+    dev:
+      type: snowflake
+      account: fcizuif-bw53205         # O ID da conta pode ficar visível, não é secreto
+      user: "{{ env_var('DBT_ENV_USER') }}" # <-- Dinâmico
+
+      role: TRANSFORM
+      #  O dbt vai ler o conteúdo da chave e a senha dela direto da memória do GitHub
+      private_key: "{{ env_var('DBT_ENV_PRIVATE_KEY') }}" 
+      private_key_passphrase: "{{ env_var('DBT_ENV_PASSPHRASE') }}" 
+
+      database: HOSPITAL_DB
+      schema: DEV
+      threads: 1
+      warehouse: COMPUTE_WH
+  target: dev
