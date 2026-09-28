@@ -11,6 +11,6 @@ airbnb:
 
       database: AIRBNB
       schema: DEV
-      threads: 1
+      threads: 4
       warehouse: COMPUTE_WH
   target: dev
