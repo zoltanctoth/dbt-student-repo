@@ -42,6 +42,21 @@ models:
 # ------- dim_hosts_cleansed -------
 
   - name: dim_hosts_cleansed
+    versions:
+      - v: 1
+        defined_in: dim_hosts_cleansed
+        deprecation_date: 2026-09-01
+      - v: 2
+        defined_in: dim_hosts_cleansed_v2
+        columns:
+          - include: '*'
+            exclude: [host_name]
+          - name: host_name
+            description: The name of host (N/A if not available)
+            data_type: string
+            constraints:
+              - type: not_null
+    latest_version: 2
     description: Cleansed table which contain Airbnb hosts.
     config:
       contract: 

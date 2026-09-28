@@ -10,8 +10,8 @@ def is_holiday(date_col):
 def model(dbt, session):
     dbt.config(
         materialized="table",
-        packages=["holidays", "snowflake-connector-python[pandas]"]
-        # enabled=False # We are adding this line in the Model Lifecycle / Disabling Models section
+        packages=["holidays", "snowflake-connector-python[pandas]"],
+        enabled=False # We are adding this line in the Model Lifecycle / Disabling Models section
     )
 
     orders_df = dbt.ref("seed_full_moon_dates")
