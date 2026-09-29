@@ -1,0 +1,17 @@
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://0bb94efe.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=8ywgjSnnHqg
+    description: Executive Dashboard about Airbnb listings and hosts
+      
+
+    depends_on:
+      - ref('dim_host_w_listings')
+      - ref('full_moon_reviews')
+      - ref('scd_raw_listings')
+
+    owner:
+      name: Gomathi S.
+      email: ksgomathi@gmail.com

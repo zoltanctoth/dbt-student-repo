@@ -1,0 +1,36 @@
+name: 'airbnb'
+version: '1.0.0'
+profile: 'airbnb'
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+asset-paths: ["assets"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+on-run-start:
+  - "CREATE TABLE IF NOT EXISTS {{ target.schema }}.audit_log(
+    id INT IDENTITY(1,1) ORDER,  model_name string, run_timestamp timestamp 
+    )"
+models:
+  airbnb:
+    +post-hook:
+      - "INSERT INTO {{ target.schema }}.audit_log(model_name, run_timestamp)
+         VALUES('{{ this }}', current_timestamp)"
+    +materialized: view
+    src:
+      +materialized: ephemeral
+    dim:
+      +materialized: table
+    fct:
+      +materialized: table
+      +tags: ['fct']
+
+
+vars:
+  profile: 'dummy'
