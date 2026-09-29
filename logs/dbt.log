@@ -1,0 +1,159 @@
+[0m13:10:48.903453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F5274D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F7AB1490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F93FE330>]}
+
+
+============================== 13:10:48.920980 | dc9a3cbb-c8cd-4c9c-95ed-5b5da4ddadda ==============================
+[0m13:10:48.920980 [info ] [MainThread]: Running with dbt=1.11.7
+[0m13:10:48.923981 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\anmadhu\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init --skip-profile-setup airbnb', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m13:10:49.324149 [debug] [MainThread]: Starter project path: C:\Users\anmadhu\course\.venv\Lib\site-packages\dbt\include\starter_project
+[0m13:10:49.393038 [info ] [MainThread]: 
+Your new dbt project "airbnb" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:10:49.397436 [debug] [MainThread]: Command `dbt init` succeeded at 13:10:49.396426 after 0.86 seconds
+[0m13:10:49.397436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F95D3E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F929CD40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153F7B8A9F0>]}
+[0m13:10:49.398436 [debug] [MainThread]: Flushing usage events
+[0m13:10:50.926441 [debug] [MainThread]: An error was encountered while trying to flush usage events
+{"data":{"log_version":3,"version":"=2.0.0-preview.173"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"019e1a77-1f96-78f1-9995-08b7274f3d04","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.173","name":"MainReportVersion","pid":25000,"thread":"tokio-rt-worker","ts":"2026-05-12T04:34:35.047578Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\anmadhu\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"019e1a77-1f96-78f1-9995-08b7274f3d04","level":"debug","msg":"running dbt-fusion with argumets {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false}","name":"MainReportArgs","pid":25000,"thread":"tokio-rt-worker","ts":"2026-05-12T04:34:35.047653Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"019e1a77-1f96-78f1-9995-08b7274f3d04","level":"debug","msg":"No active cloud project configured, skipping remote license","name":"Generic","pid":25000,"thread":"tokio-rt-worker","ts":"2026-05-12T04:34:35.063516Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"019e1a77-1f96-78f1-9995-08b7274f3d04","level":"info","msg":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","name":"ShowNode","pid":25000,"thread":"tokio-rt-worker","ts":"2026-05-12T04:34:35.066703Z"}}
+{"data":{"completed_at":"2026-05-12T04:34:36.393774Z","elapsed":1.3467142581939697,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"019e1a77-1f96-78f1-9995-08b7274f3d04","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [1.3s]","name":"CommandCompleted","pid":25000,"thread":"tokio-rt-worker","ts":"2026-05-12T04:34:36.394025Z"}}
+[0m10:24:24.467950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4C33FEA80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4BF11AEA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4BF119A00>]}
+
+
+============================== 10:24:24.520734 | 2b781a05-39fc-4ea4-bfe3-b10f0a14155e ==============================
+[0m10:24:24.520734 [info ] [MainThread]: Running with dbt=1.11.7
+[0m10:24:24.523730 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\anmadhu\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m10:24:24.524746 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\anmadhu\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m10:24:24.526733 [debug] [MainThread]: Command `dbt run` failed at 10:24:24.526733 after 0.42 seconds
+[0m10:24:24.528249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4C1E75F70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4C3496B40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F4C3363200>]}
+[0m10:24:24.529269 [debug] [MainThread]: Flushing usage events
+[0m10:24:26.690907 [debug] [MainThread]: An error was encountered while trying to flush usage events
+{"data":{"log_version":3,"version":"=2.0.0-preview.175"},"info":{"category":"","code":"A001","extra":{},"invocation_id":"019e1ab1-d11d-7f43-8217-e2ee8a00cbad","level":"info","msg":"Running with dbt-fusion=2.0.0-preview.175","name":"MainReportVersion","pid":25244,"thread":"tokio-rt-worker","ts":"2026-05-12T05:38:41.572833Z"}}
+{"data":{"args":{"debug":"false","invocation_command":"C:\\Users\\anmadhu\\.local\\bin\\dbt.exe license info --json --log-format json","log_format":"json","quiet":"false","write_json":"true"}},"info":{"category":"","code":"A002","extra":{},"invocation_id":"019e1ab1-d11d-7f43-8217-e2ee8a00cbad","level":"debug","msg":"running dbt-fusion with arguments {\"command\":\"license\",\"vars\":\"{}\",\"limit\":\"10\",\"debug\":false,\"log_format\":\"json\",\"quiet\":false,\"write_json\":true,\"write_catalog\":false}","name":"MainReportArgs","pid":25244,"thread":"tokio-rt-worker","ts":"2026-05-12T05:38:41.572872Z"}}
+{"data":{},"info":{"category":"","code":"","extra":{},"invocation_id":"019e1ab1-d11d-7f43-8217-e2ee8a00cbad","level":"debug","msg":"No active cloud project configured, skipping remote license","name":"Generic","pid":25244,"thread":"tokio-rt-worker","ts":"2026-05-12T05:38:41.582897Z"}}
+{"data":{"columns":[],"is_inline":true,"node_name":"license_info","output_format":"json","preview":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","unique_id":"license.info"},"info":{"category":"","code":"Q041","extra":{},"invocation_id":"019e1ab1-d11d-7f43-8217-e2ee8a00cbad","level":"info","msg":"{\n  \"status\": \"not_found\",\n  \"licensing_enabled\": true\n}","name":"ShowNode","pid":25244,"thread":"tokio-rt-worker","ts":"2026-05-12T05:38:41.584350Z"}}
+{"data":{"completed_at":"2026-05-12T05:38:41.805547Z","elapsed":0.2337183952331543,"success":true},"info":{"category":"","code":"Q039","extra":{},"invocation_id":"019e1ab1-d11d-7f43-8217-e2ee8a00cbad","level":"info","msg":"\n==================== Execution Summary =====================\nFinished 'license' successfully [233ms]","name":"CommandCompleted","pid":25244,"thread":"tokio-rt-worker","ts":"2026-05-12T05:38:41.805691Z"}}
+[0m10:29:24.596647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050C174650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050C1776E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050C176540>]}
+
+
+============================== 10:29:24.619114 | f7ee5788-02b0-483d-8b99-2270803edc9b ==============================
+[0m10:29:24.619114 [info ] [MainThread]: Running with dbt=1.11.7
+[0m10:29:24.622076 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\anmadhu\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m10:29:24.712034 [info ] [MainThread]: dbt version: 1.11.7
+[0m10:29:24.714017 [info ] [MainThread]: python version: 3.12.10
+[0m10:29:24.714997 [info ] [MainThread]: python path: C:\Users\anmadhu\course\.venv\Scripts\python.exe
+[0m10:29:24.716999 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m10:29:26.149944 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:29:26.150944 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:29:26.151943 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:29:26.423487 [info ] [MainThread]: Using profiles dir at C:\Users\anmadhu\.dbt
+[0m10:29:26.424487 [info ] [MainThread]: Using profiles.yml file at C:\Users\anmadhu\.dbt\profiles.yml
+[0m10:29:26.425486 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\anmadhu\COURSE\dbt_project.yml
+[0m10:29:26.429489 [info ] [MainThread]: adapter type: snowflake
+[0m10:29:26.430488 [info ] [MainThread]: adapter version: 1.11.3
+[0m10:29:26.432488 [info ] [MainThread]: Configuration:
+[0m10:29:26.433487 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m10:29:26.435488 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m10:29:26.438488 [info ] [MainThread]: Required dependencies:
+[0m10:29:26.441489 [debug] [MainThread]: Executing "git --help"
+[0m10:29:26.936327 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m10:29:26.937329 [debug] [MainThread]: STDERR: "b''"
+[0m10:29:26.938331 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m10:29:26.939328 [info ] [MainThread]: Connection:
+[0m10:29:26.940336 [info ] [MainThread]:   account: scbjarf-ss60166
+[0m10:29:26.941329 [info ] [MainThread]:   user: dbt
+[0m10:29:26.942329 [info ] [MainThread]:   database: AIRBNB
+[0m10:29:26.943329 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m10:29:26.944335 [info ] [MainThread]:   role: TRANSFORM
+[0m10:29:26.945328 [info ] [MainThread]:   schema: DEV
+[0m10:29:26.947328 [info ] [MainThread]:   authenticator: None
+[0m10:29:26.948326 [info ] [MainThread]:   oauth_client_id: None
+[0m10:29:26.949326 [info ] [MainThread]:   query_tag: None
+[0m10:29:26.949326 [info ] [MainThread]:   client_session_keep_alive: False
+[0m10:29:26.950325 [info ] [MainThread]:   host: None
+[0m10:29:26.952328 [info ] [MainThread]:   port: None
+[0m10:29:26.953329 [info ] [MainThread]:   proxy_host: None
+[0m10:29:26.954331 [info ] [MainThread]:   proxy_port: None
+[0m10:29:26.956327 [info ] [MainThread]:   protocol: None
+[0m10:29:26.957326 [info ] [MainThread]:   connect_retries: 1
+[0m10:29:26.959328 [info ] [MainThread]:   connect_timeout: None
+[0m10:29:26.960329 [info ] [MainThread]:   retry_on_database_errors: False
+[0m10:29:26.961341 [info ] [MainThread]:   retry_all: False
+[0m10:29:26.962330 [info ] [MainThread]:   insecure_mode: False
+[0m10:29:26.964339 [info ] [MainThread]:   reuse_connections: True
+[0m10:29:26.965339 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m10:29:26.966346 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m10:29:26.968339 [info ] [MainThread]: Registered adapter: snowflake=1.11.3
+[0m10:29:28.206556 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m10:29:28.605292 [debug] [MainThread]: Using snowflake connection "debug"
+[0m10:29:28.605292 [debug] [MainThread]: On debug: select 1 as id
+[0m10:29:28.606291 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:29:31.079975 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.474 seconds
+[0m10:29:31.082991 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m10:29:31.084504 [info ] [MainThread]: [31m1 check failed:[0m
+[0m10:29:31.085859 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\anmadhu\COURSE\dbt_project.yml> not found
+
+[0m10:29:31.089884 [debug] [MainThread]: Command `dbt debug` failed at 10:29:31.088871 after 6.94 seconds
+[0m10:29:31.090904 [debug] [MainThread]: Connection 'debug' was left open.
+[0m10:29:31.091932 [debug] [MainThread]: On debug: Close
+[0m10:29:31.731095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050CE43350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050CB29940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002050CBEA960>]}
+[0m10:29:31.733096 [debug] [MainThread]: Flushing usage events
+[0m10:29:33.925796 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:01:51.012655 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328AE9D940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328AB4D220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328AB4D250>]}
+
+
+============================== 18:01:51.075004 | 200eced7-041c-4457-a49e-d8a002530550 ==============================
+[0m18:01:51.075004 [info ] [MainThread]: Running with dbt=1.11.7
+[0m18:01:51.076994 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'prod_profiles', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug --profiles-dir prod_profiles', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:01:51.174886 [info ] [MainThread]: dbt version: 1.11.7
+[0m18:01:51.177888 [info ] [MainThread]: python version: 3.12.10
+[0m18:01:51.178886 [info ] [MainThread]: python path: C:\Users\anmadhu\course\.venv\Scripts\python.exe
+[0m18:01:51.180889 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m18:01:51.181887 [info ] [MainThread]: Using profiles dir at prod_profiles
+[0m18:01:51.182892 [info ] [MainThread]: Using profiles.yml file at prod_profiles\profiles.yml
+[0m18:01:51.183899 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\anmadhu\COURSE\dbt_project.yml
+[0m18:01:51.184903 [info ] [MainThread]: Configuration:
+[0m18:01:51.185914 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m18:01:51.186905 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:01:51.187905 [info ] [MainThread]: Required dependencies:
+[0m18:01:51.191900 [debug] [MainThread]: Executing "git --help"
+[0m18:01:51.703979 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:01:51.705803 [debug] [MainThread]: STDERR: "b''"
+[0m18:01:51.706816 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:01:51.708329 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m18:01:51.709386 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m18:01:51.710445 [info ] [MainThread]: dbt looked for a profiles.yml file in prod_profiles\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m18:01:51.711439 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\anmadhu\COURSE\dbt_project.yml> not found
+
+[0m18:01:51.714450 [debug] [MainThread]: Command `dbt debug` failed at 18:01:51.713439 after 1.22 seconds
+[0m18:01:51.715439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328C2193D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328C21BEF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002328AE9D940>]}
+[0m18:01:51.715439 [debug] [MainThread]: Flushing usage events
+[0m18:01:53.546969 [debug] [MainThread]: An error was encountered while trying to flush usage events
