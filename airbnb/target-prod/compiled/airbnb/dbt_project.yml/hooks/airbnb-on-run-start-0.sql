@@ -1,0 +1,1 @@
+CREATE TABLE IF NOT EXISTS DEV.audit_log ( model_name string, run_timestamp timestamp )
