@@ -1,0 +1,53 @@
+models:
+  - name: silver_airports
+    description: airports table
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          arguments:
+            compare_model: source('airstats', 'airports')
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: number
+      - name: airport_type
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['small_airport', 'heliport', 'closed', 'medium_airport', 'seaplane_base' , 'large_airport','balloonport']
+
+
+  - name: silver_runways
+    description: runways table
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: runway_id
+        description: the column is primary key of runways
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - unique
+      - name: airport_ident
+        data_type: text
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('silver_airports')
+                field: airport_ident
+      - name: runway_closed
+        data_type: number
+      - name: runway_length_ft
+        data_type: number 
+      - name: runway_lighted
+        data_type: number
+      - name: runway_surface
+        data_type: text
+      - name: runway_width_ft
+        data_type: number

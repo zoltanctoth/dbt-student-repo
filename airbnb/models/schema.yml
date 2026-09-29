@@ -1,0 +1,167 @@
+models:
+  - name: dim_listings_cleansed
+    description: "Cleansed table which contains Airbnb listings."
+    tests:
+      - minimum_row_count:
+          arguments:
+            min_row_count: 10000000
+            # severity: error
+    columns:
+      - name: listing_id
+        description: "Primary key for the listing"
+        tests:
+          - not_null
+          - unique
+      - name: host_id
+        description: "The host's id. References the host table"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_hosts_cleansed')
+                field: host_id
+      - name: room_type
+        description: "Type of the apartment / room"
+        tests:
+          - accepted_values:
+              arguments:
+                values: [ 'Entire home/apt', 'Private room', 'Shared room', 'Hotel room' ]
+
+      - name: minimum_nights
+        description: '{{doc("dim_listing_cleansed__minimum_nights")}}'
+        tests:
+          - positive_value
+
+  - name: dim_hosts_cleansed
+    versions:
+      - v: 1
+        defined_in: dim_hosts_cleansed
+        deprecation_date: 2030-01-01
+      - v: 2
+        columns:
+          - include: '*'
+            exclude: [ host_name ]
+          - name: host_name
+            description: The name of the host (N/A if not available)
+            data_type: string
+            constraints:
+              - type: not_null
+    latest_version: 2
+    description: "Cleansed table which contains Airbnb hosts."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: host_id
+        description: "Primary key for the host"
+        data_type: integer
+        constraints:
+          - type: not_null
+        tests:
+          - unique
+      - name: host_name
+        description: "The host's name"
+        data_type: string
+        constraints:
+          - type: not_null
+      - name: is_superhost
+        description: "Indicates if the host is a superhost"
+        data_type: string
+        tests:
+          - accepted_values:
+              arguments:
+                values: [ 't', 'f' ]
+      - name: updated_at
+        description: "Timestamp of when the host record was last updated"
+        data_type: timestamp
+      - name: created_at
+        description: "Timestamp of when the host record was created"
+        data_type: timestamp
+
+  - name: dim_listings_w_hosts
+    tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          arguments:
+            compare_model: source('airbnb', 'listings')
+    columns:
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: number
+          - dbt_expectations.expect_column_quantile_values_to_be_between:
+              arguments:
+                quantile: 0.99
+                min_value: 50
+                max_value: 500
+          - dbt_expectations.expect_column_max_to_be_between:
+              config:
+                severity: warn
+              arguments:
+                max_value: 5000
+  - name: legacy_int_host_performance
+    description: The 'legacy_int_host_performance' model provides a comprehensive view of Airbnb host performance metrics by aggregating data from raw host and listing datasets. It includes details such as the number of listings per host, average pricing, minimum and maximum pricing, room type distribution, and host tenure. Additionally, it categorizes hosts based on their portfolio size, status (e.g., superhost or standard), and dominant room type. This model is designed to support analysis and reporting on host activity and performance trends.
+    columns:
+      - name: host_id
+        description: Unique identifier for each host. This is used to associate hosts with their listings and performance metrics.
+        data_type: number
+        data_tests:
+          - not_null
+          - unique
+      - name: host_name
+        description: The name of the host as provided in the raw data. This is typically used for display purposes.
+        data_type: varchar
+      - name: host_since
+        description: The date when the host joined the platform. This is used to calculate the host's tenure and categorize their experience level.
+        data_type: timestamp_ntz
+      - name: host_is_superhost
+        description: Indicates whether the host is a superhost. A value of 't' represents a superhost, while other values represent a standard host.
+        data_type: varchar
+      - name: total_listings
+        description: The total number of unique listings associated with the host.
+        data_type: number
+      - name: entire_home_count
+        description: The count of listings where the room type is 'Entire home/apt' associated with the host.
+        data_type: number
+      - name: private_room_count
+        description: The number of listings associated with the host that are categorized as private rooms.
+        data_type: number
+      - name: shared_room_count
+        description: The number of listings associated with the host that are categorized as shared rooms.
+        data_type: number
+      - name: hotel_room_count
+        description: The number of listings associated with the host that are categorized as hotel rooms.
+        data_type: number
+      - name: avg_listing_price
+        description: The average price of all listings associated with a host, calculated from the cleaned price data.
+        data_type: number
+      - name: min_listing_price
+        description: The minimum price among all listings associated with a host, derived from the cleaned price data.
+        data_type: number
+      - name: max_listing_price
+        description: The maximum price among all listings associated with a host, derived from the cleaned price data.
+        data_type: number
+      - name: avg_minimum_nights
+        description: The average number of minimum nights required across all listings associated with a host.
+        data_type: number
+      - name: min_minimum_nights
+        description: The minimum number of nights required across all listings associated with a host.
+        data_type: number
+      - name: max_minimum_nights
+        description: The maximum number of nights required across all listings associated with a host.
+        data_type: number
+      - name: portfolio_size
+        description: Categorizes the host's portfolio based on the number of listings they manage. Possible values include 'inactive' (no listings), 'single_listing' (1 listing), 'small_portfolio' (2-5 listings), 'medium_portfolio' (6-15 listings), and 'large_portfolio' (more than 15 listings).
+        data_type: varchar
+      - name: host_status
+        description: Indicates whether the host is a 'superhost' or a 'standard' host based on the 'is_superhost' flag in the source data.
+        data_type: varchar
+      - name: host_tenure
+        description: Classifies the host's experience level based on the duration since their account creation. Possible values include 'unknown' (no creation date), 'new_host' (less than 1 year), 'experienced_host' (1-3 years), and 'veteran_host' (more than 3 years).
+        data_type: varchar
+      - name: days_as_host
+        description: The number of days since the host's account was created, calculated as the difference between the current date and the host's creation date.
+        data_type: number
+      - name: dominant_room_type
+        description: The room type that has the highest count among the host's listings, determined by comparing the counts of 'Entire home/apt', 'Private room', 'Shared room', and 'Hotel room'.
+        data_type: varchar

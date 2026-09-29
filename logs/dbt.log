@@ -1,0 +1,195 @@
+[0m16:31:52.601869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54828F770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54A69FD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54A69F890>]}
+
+
+============================== 16:31:52.611879 | 071b25c9-5f3a-4daf-b1d9-c376271d9a12 ==============================
+[0m16:31:52.611879 [info ] [MainThread]: Running with dbt=1.11.7
+[0m16:31:52.613220 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init --skip-profile-setup airbnb', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m16:31:53.140324 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\saber\.dbt
+[0m16:31:53.161322 [debug] [MainThread]: Starter project path: C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\include\starter_project
+[0m16:31:53.222670 [info ] [MainThread]: 
+Your new dbt project "airbnb" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:31:53.224973 [debug] [MainThread]: Command `dbt init` succeeded at 16:31:53.224746 after 0.82 seconds
+[0m16:31:53.225668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54ACDC050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54A759130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F549553570>]}
+[0m16:31:53.226279 [debug] [MainThread]: Flushing usage events
+[0m16:31:53.798560 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:40:03.923157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E3ABF770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E4EFFED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E4EFF890>]}
+
+
+============================== 18:40:03.980517 | dcdf2d86-1740-4b59-8cc9-63bdd573559b ==============================
+[0m18:40:03.980517 [info ] [MainThread]: Running with dbt=1.11.7
+[0m18:40:03.981964 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:40:03.982902 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:40:03.986365 [debug] [MainThread]: Command `dbt run` failed at 18:40:03.985947 after 0.31 seconds
+[0m18:40:03.986976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E4F123F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E5F08950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000257E4D83680>]}
+[0m18:40:03.987464 [debug] [MainThread]: Flushing usage events
+[0m18:40:04.681947 [debug] [MainThread]: An error was encountered while trying to flush usage events
+==================== 2026-06-21T17:46:15.237690Z | 019eeb4a-4b42-7013-978d-ebe59caf16cd ====================
+[0m23:49:59.058401 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 23:49:59.250995 | bdd554cd-1e7f-469e-807e-d50d1e2a5488 ==============================
+[0m23:49:59.250995 [info ] [MainThread]: Running with dbt=1.11.7
+[0m23:49:59.252367 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init airstats', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:49:59.323822 [debug] [MainThread]: Starter project path: C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\include\starter_project
+[0m23:49:59.472286 [info ] [MainThread]: 
+Your new dbt project "airstats" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:49:59.474106 [info ] [MainThread]: Setting up your profile.
+[0m23:50:44.855537 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m23:50:44.856219 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m23:50:44.856608 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m23:52:27.487353 [error] [MainThread]: Encountered an error:
+
+[0m23:52:27.618230 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ~~~~~~~~~~~~^
+        text, default=default, hide_input=hide_input, type=type
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+  File "C:\Users\saber\Desktop\course\.venv\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m23:52:27.621853 [debug] [MainThread]: Command `dbt init` failed at 23:52:27.621503 after 148.68 seconds
+[0m23:52:27.622889 [debug] [MainThread]: Flushing usage events
+[0m23:07:07.356950 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 23:07:07.508892 | 7da8fb50-cc1a-4ec7-b124-639739c92e65 ==============================
+[0m23:07:07.508892 [info ] [MainThread]: Running with dbt=1.11.7
+[0m23:07:07.511267 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'invocation_command': 'dbt compile --models legacy_int_host_performance', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:07:07.511819 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+Usage of `--models`, `--model`, and `-m` is deprecated in favor of `--select` or
+`-s`.
+[0m23:07:07.512974 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:07:07.513834 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- ModelParamUsageDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m23:07:07.515360 [debug] [MainThread]: Command `dbt compile` failed at 23:07:07.515178 after 0.25 seconds
+[0m23:07:07.515801 [debug] [MainThread]: Flushing usage events
+[0m23:07:17.245280 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 23:07:17.437718 | cda646cb-8027-4e05-98d1-ba941ee5a62b ==============================
+[0m23:07:17.437718 [info ] [MainThread]: Running with dbt=1.11.7
+[0m23:07:17.439228 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'invocation_command': 'dbt compile --select legacy_int_host_performance', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m23:07:17.439934 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m23:07:17.441487 [debug] [MainThread]: Command `dbt compile` failed at 23:07:17.441318 after 0.29 seconds
+[0m23:07:17.441892 [debug] [MainThread]: Flushing usage events
+[0m00:11:34.164195 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 00:11:34.289349 | 40422445-1364-484e-b5cd-c018cedb9f38 ==============================
+[0m00:11:34.289349 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:11:34.290308 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:11:34.290935 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:11:34.291714 [debug] [MainThread]: Command `dbt deps` failed at 00:11:34.291605 after 0.18 seconds
+[0m00:11:34.291945 [debug] [MainThread]: Flushing usage events
+[0m00:19:58.279927 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 00:19:58.396364 | aa009095-1796-4262-8907-61b99c1fccec ==============================
+[0m00:19:58.396364 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:19:58.397967 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:19:58.399082 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:19:58.400909 [debug] [MainThread]: Command `dbt deps` failed at 00:19:58.400625 after 0.17 seconds
+[0m00:19:58.401572 [debug] [MainThread]: Flushing usage events
+[0m00:20:16.119586 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 00:20:16.221036 | 1b0a4cf2-c963-442c-8d3b-cbc0eb7ad83e ==============================
+[0m00:20:16.221036 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:20:16.222648 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt clean', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:20:16.223974 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:20:16.225698 [debug] [MainThread]: Command `dbt clean` failed at 00:20:16.225443 after 0.15 seconds
+[0m00:20:16.226316 [debug] [MainThread]: Flushing usage events
+[0m00:23:14.645255 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 00:23:14.798965 | f07582c2-2e8a-469d-a458-32fb864538ac ==============================
+[0m00:23:14.798965 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:23:14.800710 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\saber\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:23:14.802252 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\saber\Desktop\course\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:23:14.804197 [debug] [MainThread]: Command `dbt deps` failed at 00:23:14.803920 after 0.21 seconds
+[0m00:23:14.804861 [debug] [MainThread]: Flushing usage events
