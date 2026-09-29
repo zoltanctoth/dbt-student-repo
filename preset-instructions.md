@@ -1,0 +1,22 @@
+# Preset Instructions
+
+## SQLAlchemy URL
+```
+snowflake://preset@bpumlru-oi59236/AIRBNB?role=REPORTER&warehouse=COMPUTE_WH
+```
+
+## Security JSON
+```json
+{
+    "auth_method": "keypair",
+    "auth_params": {
+        "privatekey_body": "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFNTBfBgkqhkiG9w0BBQ0wUjAxBgkqhkiG9w0BBQwwJAQQ82ZxDlrT3JiT3ZMP\nwDuK1wICCAAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEEP8lbFnD5HA9kfXA\nRM4pFFkEggTQAhvW/5FRhiKfgmrTYXDfFNJ603YSRf30xrVVZRzeUZEmpKG5Ng3Y\nHULvN1k14fDGNzKUhgvntbc80G7+mKCikrqa1ip+sgwt7tJI/l2Ltq5iK4Z4Hf/8\nEybWCUomSX6OmWc0Q/0FNMkIKToFWKAhZBm1EAOrDIgAA+ZKz9666lbgD9Hu5+h+\nITgIHWXIWlgF1Z53KvNxJyr17XVw/XVDZCXcE2wIiEa80oR8ppNE8h4elzUoie2r\nDlMNT6IZxwkOwIJEmTLqsYkBDhle+YpFFrnxuGWgPYTFVfh95TMBb82PCE8j4dnX\nw1BTP04JFgfifyOB1KWwRyxueY4iYV+AV5pRI63IvZk+L8V+sIlBAEKNvcooOuVs\n/gLhuIl29y2L5Neivv0vMrEtIXlGQcGMvOOnMBcu9908an/yOjIFiASlXZZIbmDP\npCmvlRYBqILHWuVdOaoX74f3mMVkcHS+BIAySjtcO0p6kmuBsUmBz07Q2b3ll6pV\naWla+9WXxKIovnIL+4C59WhMX848fxpRCA0aRa4bqjq8xgXC5ynYkmh36MlCtCof\nfv0CMhnk+2W0EB243Yhmt6FbKfhqFU1HtjiLD2KCi/r7vhf7RFg+J+DY312X912V\nVd21EJILfrrPozjdn6zksHvaQ51Vqh5LfrCJqILJv+lAGhaGsbs/gSK3rP8yGvja\ntml5/I1dDIhhuURbYiabuJyWM2bbnsAuVSC4hnTcFcDXJxOBdNGS6+1nbYh85I2Y\n2SgBEGkrIP+b9RY62LSSAyGlJTZA7s5Wn61op/YIZxhtOMy+4uji+vZhf2excYS4\nCQqDXZBSJriQ9El3DBUjkKRGbS7g4QCtn5YDdg6I7fI5mD8UHoZTPW/JxW2Osony\n+VrG+ytMEFtVFcksDCn75AI7WIo2JO0o63PJvumIalaZXrLqr7QjK6A9jYBq+kbV\njwIAQyIw1NgVO40sp9t7arfO3f7r0UHkff6nNEYVa71QxDeAdCv3HM0kMC5tWSnQ\nxXlyp+9VvN9P6tLCIxGBstnPHlZJcr9XXKn3zz2FGoK8d+x565cuaZ46kINXx0wv\nOAQddIHHbhta3J8fMxZgXOvw2xrf+PKOcdDJqPAZljNod2lZXsmdHEsW11+qRCcn\nWgqVnKfv2qQNHoIkVS0GygzvjUuLkRD8k/cktf9HHywUohkD32jcBxKDQ/Gar9wo\n+sJ+VRt3lAm94zsIwNbG9XJN4xUBY9CrSF3KFhJxNN55h+iBuhw0rxECpZ+E47yF\naeHgR+wfVbY6/7B1h4xE0aQY4i6HJ/U5olE6EPdZhNskwOuVo56xyrX7IfoetPy9\nsx/SpHuIQqQ4cN5xDsI8Fmrr28eQRzKW94QCvnLSNkmkzXzVTxSiuVbK1BsStVvI\nlyzBpN7hMPwItNY9cElGRuzMTniy0wi93xEGHMR5YUJJGLCsZeleUEiIengHD4rJ\nAzgcLubHFZnZhaMNEmLFiNHABbk2YoQxECUL1F9JZ0Z43gB0E8Ipwo/sAnvJfg0C\nJKAZ4cfbsF7ifYiI8uk6QLNFssv2FCMky8mpZJvzKf0NJoM9OKRLgjq6bHZsyrLi\nyzhGy70lf9yO0GOAHrsT+MoVvRCOdnPd88gOqacl63WQ5Ru/jZOrBDA=\n-----END ENCRYPTED PRIVATE KEY-----\n",
+        "privatekey_pass": "q"
+    }
+}
+```
+
+## Instructions
+1. Use the SQLAlchemy URL above to connect to your Snowflake database
+2. Use the Security JSON configuration for authentication
+3. The private key is already formatted with escaped newlines for direct use
