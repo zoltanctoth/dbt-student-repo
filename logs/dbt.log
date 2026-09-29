@@ -1,0 +1,93 @@
+[0m18:55:56.025966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10482f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067df610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067dfd90>]}
+
+
+============================== 18:55:56.030738 | 2c9d1047-73ac-44c2-a43f-299b989c0e01 ==============================
+[0m18:55:56.030738 [info ] [MainThread]: Running with dbt=1.11.7
+[0m18:55:56.031118 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'partial_parse': 'True', 'write_json': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'target_path': 'None', 'profiles_dir': '/Users/ghg.vspahta/.dbt', 'invocation_command': 'dbt init --skip-profile-setup airbnb', 'log_cache_events': 'False', 'version_check': 'True', 'no_print': 'None', 'log_path': 'logs', 'log_format': 'default', 'cache_selected_only': 'False', 'static_parser': 'True', 'use_colors': 'True'}
+[0m18:55:56.070052 [info ] [MainThread]: Creating dbt configuration folder at /Users/ghg.vspahta/.dbt
+[0m18:55:56.071578 [debug] [MainThread]: Starter project path: /Users/ghg.vspahta/Projects/dbt-student-repo/.venv/lib/python3.13/site-packages/dbt/include/starter_project
+[0m18:55:56.074991 [info ] [MainThread]: 
+Your new dbt project "airbnb" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:55:56.614853 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.6365787, "process_in_blocks": "0", "process_kernel_time": 0.182068, "process_mem_max_rss": "117293056", "process_out_blocks": "0", "process_user_time": 0.774708}
+[0m18:55:56.615952 [debug] [MainThread]: Command `dbt init` succeeded at 18:55:56.615781 after 0.64 seconds
+[0m18:55:56.616386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a68050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a8c950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068845a0>]}
+[0m18:55:56.616784 [debug] [MainThread]: Flushing usage events
+[0m18:55:57.356704 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m08:14:49.784112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d4f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109de7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109de7d90>]}
+
+
+============================== 08:14:49.787620 | dc2ec6ff-3f42-4d8b-ab7e-2bbdeb4b9753 ==============================
+[0m08:14:49.787620 [info ] [MainThread]: Running with dbt=1.11.7
+[0m08:14:49.787957 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'quiet': 'False', 'use_colors': 'True', 'log_path': 'logs', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'empty': 'False', 'target_path': 'None', 'cache_selected_only': 'False', 'printer_width': '80', 'profiles_dir': '/Users/ghg.vspahta/.dbt', 'write_json': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt snapshot', 'debug': 'False', 'log_format': 'default', 'fail_fast': 'False', 'use_experimental_parser': 'False'}
+[0m08:14:49.788295 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/ghg.vspahta/Projects/dbt-student-repo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m08:14:49.971373 [debug] [MainThread]: Resource report: {"command_name": "snapshot", "command_success": false, "command_wall_clock_time": 0.24692138, "process_in_blocks": "0", "process_kernel_time": 0.276991, "process_mem_max_rss": "109772800", "process_out_blocks": "0", "process_user_time": 0.965384}
+[0m08:14:49.972357 [debug] [MainThread]: Command `dbt snapshot` failed at 08:14:49.972186 after 0.25 seconds
+[0m08:14:49.972868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e0a190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e90170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e885a0>]}
+[0m08:14:49.973312 [debug] [MainThread]: Flushing usage events
+[0m08:14:50.532988 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:12:35.770788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d4f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5e3610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b5e3890>]}
+
+
+============================== 17:12:35.774349 | ed982cdf-d53c-4ebe-bba0-37d1315ef44e ==============================
+[0m17:12:35.774349 [info ] [MainThread]: Running with dbt=1.11.7
+[0m17:12:35.774695 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'log_cache_events': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'profiles_dir': '/Users/ghg.vspahta/.dbt', 'use_experimental_parser': 'False', 'printer_width': '80', 'target_path': 'None', 'write_json': 'True', 'fail_fast': 'False', 'introspect': 'True', 'log_path': 'logs', 'invocation_command': 'dbt docs serve', 'partial_parse': 'True', 'debug': 'False', 'empty': 'None', 'static_parser': 'True', 'use_colors': 'True'}
+[0m17:12:35.775034 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/ghg.vspahta/Projects/dbt-student-repo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:12:35.777070 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_success": false, "command_wall_clock_time": 0.058943585, "process_in_blocks": "0", "process_kernel_time": 0.176016, "process_mem_max_rss": "111607808", "process_out_blocks": "0", "process_user_time": 0.770333}
+[0m17:12:35.777403 [debug] [MainThread]: Command `dbt docs serve` failed at 17:12:35.777351 after 0.06 seconds
+[0m17:12:35.777588 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6022c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b68c170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6845a0>]}
+[0m17:12:35.777753 [debug] [MainThread]: Flushing usage events
+[0m17:12:36.570203 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:20:58.056478 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085ef230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a6e7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a6e7890>]}
+
+
+============================== 17:20:58.061015 | 9c04bd94-e522-4864-87e0-3af8fe2f731c ==============================
+[0m17:20:58.061015 [info ] [MainThread]: Running with dbt=1.11.7
+[0m17:20:58.061480 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'target_path': 'None', 'static_parser': 'True', 'printer_width': '80', 'use_experimental_parser': 'False', 'write_json': 'True', 'profiles_dir': '/Users/ghg.vspahta/.dbt', 'cache_selected_only': 'False', 'introspect': 'True', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True', 'debug': 'False', 'partial_parse': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'fail_fast': 'False', 'log_format': 'default', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True'}
+[0m17:20:58.061906 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/ghg.vspahta/Projects/dbt-student-repo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:20:58.064125 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.05878671, "process_in_blocks": "0", "process_kernel_time": 0.160487, "process_mem_max_rss": "111263744", "process_out_blocks": "0", "process_user_time": 0.739558}
+[0m17:20:58.064538 [debug] [MainThread]: Command `dbt docs generate` failed at 17:20:58.064472 after 0.06 seconds
+[0m17:20:58.064745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a70a2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a790170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a7885a0>]}
+[0m17:20:58.064938 [debug] [MainThread]: Flushing usage events
+[0m17:20:58.852478 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:17:15.260165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1067af230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106e7610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1106e7d90>]}
+
+
+============================== 17:17:15.263765 | 61009ef7-8dc3-4cbe-9499-5b9f10c70cea ==============================
+[0m17:17:15.263765 [info ] [MainThread]: Running with dbt=1.11.7
+[0m17:17:15.264132 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'quiet': 'False', 'log_path': 'logs', 'use_colors': 'True', 'profiles_dir': '/Users/ghg.vspahta/.dbt', 'introspect': 'True', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'cache_selected_only': 'False', 'partial_parse': 'True', 'invocation_command': 'dbt test --select source:airbnb.listings', 'printer_width': '80', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'empty': 'None', 'warn_error': 'None', 'write_json': 'True', 'no_print': 'None', 'version_check': 'True', 'log_format': 'default'}
+[0m17:17:15.264495 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/ghg.vspahta/Projects/dbt-student-repo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:17:15.481377 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.27927172, "process_in_blocks": "0", "process_kernel_time": 0.292704, "process_mem_max_rss": "113147904", "process_out_blocks": "0", "process_user_time": 0.9458}
+[0m17:17:15.482301 [debug] [MainThread]: Command `dbt test` failed at 17:17:15.482166 after 0.28 seconds
+[0m17:17:15.482754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110806190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110890170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11088c5a0>]}
+[0m17:17:15.483151 [debug] [MainThread]: Flushing usage events
+[0m17:17:16.227672 [debug] [MainThread]: An error was encountered while trying to flush usage events
