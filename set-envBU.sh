@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Source this file before running dbt:
+#   . set-env.sh
+#   or . ../set-env.sh if you run it from the airbnb/ folder.
+# !! Do this every time you open a new terminal, as env vars are not persisted !!
+
+export SNOWFLAKE_ACCOUNT="gnteocg-ub52101"
+export DBT_USER="dbt"
+export PRIVATE_KEY_PASSPHRASE="q"
+export PRIVATE_KEY="-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIFNTBfBgkqhkiG9w0BBQ0wUjAxBgkqhkiG9w0BBQwwJAQQS0WGlS9+lzm/V/Q8
+qzGWggICCAAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEEBnTc9UOL6S7TU+r
+3hmeEYoEggTQQ8/GT0JSDkgPu0sb9+QrEQ2SydNSPx2YBDcbodXAXBhOjUdX+p+7
+GfOgWo/LX1y+CxN2KecuOcT/s2otVND0ZNmGgN9Y9yUuK2mW56E5kvRPa537Ls9h
+ltYLUhshaCOgb6z5/Iptk1JSBDDy0ddnl0+h/GeeI3Jd8zCI2V0PzYxpyFtbc2gF
+jU/3KtHrD0Tyl7SlHKHNOC0cQLS7/WqEnoHkZ3fTXxLy+zblbCVOQSaLtdxSnzcd
+nugfM9vR6PIT8eX/RNSSAEAliYLOyCMEvVv42tcTmqWKOuu5499PkV+QW+5y9gIh
+fM5wtR/PokO7vlbpUPjzqOQXRyE9uYCrBkoiLw3FJGLpld+vAFopr1f/+QpqJsDn
+Iaopj3mDwCzeOncbkhKRFEP9VShebWPn9eqBu17UCib4aq9xKBWtxc5IEaRZCATg
+CTOgaKUAEFwehwJopH9GgXl6MxlOSCo74Wrh0fqvKcyqxTfRH4SHT4JYwltppwkP
+N2t8uoLzKmH/h7nxJ0QUhXpxPlJXmNW4aOkEXAZBXi0IgNot/81aPNm+NdL3lr1A
+yZ95ZJKG6BmSh8g+Pg4tRvCBfRdxG638wPPQHoiGLX6HPt7QkOYNKnOGaNBBN4cS
+KdQ3bKe6JUeipjjFm02C3QNV3xujMetz2GLGt+r6jJSPMZN6BuVv4FnxaSOYyuUV
+YObznYGZpik/Inno6To/dUtcpSDjqjqAXcu71zCzK8oDB/Ktv7SGPT69T6mdUfl9
+dqdpvKfAojv9R23Mlgn8xOf49vymUF9WyfawmEdBGZX2BRr0yPP56zrhPK2QIAfF
+XFzG2tv6bE7spIv2P/QKhWeYhZnrh5ysxOF3eElaeyNNM3Xy4WI5cIrlYK6jNzex
+qM+BGVbZVT9kDj+XzZDKcdTgE5ifVh0+NtqXswb0K1zKp9fFPxRo09zTstKhcnBF
+qBVBY24vYzMaSetBwmB2pcmJauS8ZPdKdHaAvpMKi+s41cRGbIbV+LfmHMURhyKi
+89ytVDGFghQssH1kFprz/i5co6XHFhUoi5wyYIvh0AM0H5J+9jNOrt5L26GPC2jl
+6D9RpOgOxMA4TGNi118KJDG94l3o2d/2HkMiwI0BySni2ssBEbcc1IrjCCoKjy+D
+ZjDv4JbzTH8G9Nzln0JPu1TFL57ciONNj2JaZm2jA5PRWCNbbfgt9ZMvXNgjlASt
+xDHH979jcZ8nCPIKNAjxWXxo5QBCCvXv1dS9FxALadIffTYaEuRlfdmVTmjpvM0D
+uFrKZLs6YQTj66zanpBFQMznmA3dAAoW3Z2XxXxY5QfyM09PVxfkyVl84ZuPXn7k
+jFjlPhG4KdL4xp97psAbsLNIjrMhH4R8KX8VEv6q4wiloWwuqHK0elFCREmX99X6
+e+NCMRA2O3K5mXIm7U6VzG00hVHCdRLJVNIriIAk07mLEhtw839h+B+AiUcBQmeW
+AuQhMbv2pWf6AE+wxRHwCNC7SsSuQ2GLdqi3qgaB2zuSWhEfVSMzr9/XFOBifLVV
+h+7AWinxGH+LxxdMiaS8fLNre+4xK82zDmACM/WxBStctpmN/kex9qsdBMMp72XA
+Mxh0cEwSkccPG07b4VHfpTeaRFoiXliy09rqpHBYBixCkVitL8ygv9k=
+-----END ENCRYPTED PRIVATE KEY-----
+"
