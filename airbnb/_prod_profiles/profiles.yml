@@ -1,5 +1,6 @@
 airbnb:
   outputs:
+
     staging:
       type: snowflake
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
@@ -13,6 +14,7 @@ airbnb:
       schema: DEV
       threads: 4
       warehouse: COMPUTE_WH
+  
     prod:
       type: snowflake
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
@@ -26,6 +28,7 @@ airbnb:
       schema: DEV
       threads: 4
       warehouse: COMPUTE_WH 
+  
     dev:
       type: snowflake
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
