@@ -1,0 +1,16 @@
+airbnb/profiles.yml
+airbnb/target*/
+logs/
+
+airbnb/package-lock.yml
+airbnb/dbt_packages/
+airbnb/dbt_internal_packages/
+.env
+
+.vscode
+
+.user.yml
+.DS_Store
+
+set-env.sh
+set-env.ps1
