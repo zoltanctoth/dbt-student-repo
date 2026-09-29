@@ -1,0 +1,16 @@
+﻿cd C:\Users\Yakub\Downloads\dbt\dbt_course
+@'
+# Secrets and environment
+set-env.ps1
+.env
+*.env
+
+# dbt artifacts
+target/
+dbt_packages/
+logs/
+
+# Python
+.venv/
+__pycache__/
+'@ | Set-Content -Path .gitignore -Encoding utf8
