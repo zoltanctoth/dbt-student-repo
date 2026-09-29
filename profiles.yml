@@ -1,0 +1,15 @@
+airbnb:
+  outputs:
+    dev:
+      type: snowflake
+      account: OTTO-PRODUCTION
+      user: FKT_FICO_REPORTING
+
+      role: TEAM_FICO
+      private_key_path: C:\Users\DUCNGUYE\FKT_FICO_REPORTING_rsa_key.txt
+      
+      database: PRODUCTION
+      schema: PRD_BIWD_FINANCE_PRIVATE_LAB
+      threads: 1
+      warehouse: WH_FICO_XSMALL_1
+  target: dev
