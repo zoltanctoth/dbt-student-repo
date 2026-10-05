@@ -1,0 +1,10 @@
+selectors:
+  - name: dim_except_listhings_with_hosts
+    description: Select all dim models, excluding dim_expect_listhings_with_hosts
+    definition: 
+      union:
+        - method: path
+          value: models/dim
+        - exclude:
+          - method: fqn # Fully Qualified Name
+            value: dim_listings_with_hosts 

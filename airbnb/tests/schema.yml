@@ -1,0 +1,167 @@
+models:
+  - name: dim_listings_cleansed
+    description: Cleansed table witch contains Airbnb listings.
+    data_tests:
+      - test_generic_minimum_row_count: # Custom Generic test with parameter
+          arguments:
+            min_row_count: 1000
+            # severity: warn # This is how explicitly switch error to warn for this custom generic test for this model: dim_listings_cleansed
+
+    columns:
+      - name: listing_id
+        description: Primary key for the listing
+        data_tests: # Historically it was called tests:
+          - unique # 1
+          - not_null # 2
+
+      - name: host_id
+        description: The hosts id. References the host table.
+        data_tests:
+          - not_null # 2
+          - relationships: # 3
+              arguments:
+                to: ref('dim_hosts_cleansed')
+                field: host_id 
+
+      - name: room_type
+        description: type of the apartment / room
+        data_tests:
+          - accepted_values: # 4
+              arguments:
+                values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
+      
+      - name: minimum_nights
+        description: '{{ doc("dim_listing_cleansed__minimum_nights") }}'
+        data_tests:
+          - test_generic_positive_values # Custom Generic test
+
+  - name: dim_hosts_cleansed
+    versions:
+      - v: 1
+        defined_in: dim_hosts_cleansed
+        deprecation_date: 2026-07-15
+      - v: 2
+        columns:
+          - include: '*'
+            exclude: [host_name]
+          - name: host_name 
+            description: The name of the host (N/A if not available)
+            data_type: string 
+            constraints:
+              - type: not_null
+
+    latest_version: 2
+  
+    description: Cleansed table witch contains Airbnb hosts.
+    config:
+      contract:
+        enforced: true
+
+    # To have the constraints, we need to have an enforced contract first!
+    constraints: # This is to apply the constraints at the data input time! # At the model level!
+      - type: primary_key
+        columns: [host_id]
+        warn_unenforced: false # This is not supported by snowflake at the moment!
+    
+    columns:
+      - name: host_id
+        description: A unique id for each host
+        data_type: integer
+        constraints:
+          - type: not_null
+          - type: unique
+            warn_unenforced: false # This is not supported by snowflake at the moment!
+        data_tests:
+          - unique 
+          # - not_null # For production is becomes useless since no non-unique value enters int othe tables! - REDUNDANT
+
+      - name: host_name
+        description: PII as name of the host
+        data_type: string
+        constraints: # This 'not_null' is for data-check at the input time! # At the column level!
+          - type: not_null
+        # data_tests:
+          # - not_null # This 'not_null' data-test is to check the already data in the table/model - REDUNDANT
+
+      - name: is_superhost
+        description: '{{ doc("dim_hosts_cleansed_superhost") }}'
+        data_type: string
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['t', 'f']
+      
+      - name: updated_at
+        data_type: timestamp
+        
+      - name: created_at
+        data_type: timestamp
+
+  - name: dim_listings_with_hosts
+    data_tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          arguments:
+            compare_model: source('airbnb', 'listings') # ref("dim_hosts_cleansed")
+          # group_by: [col1, col2] # (Optional)
+          # compare_group_by: [col1, col2] # (Optional)
+          # factor: 1 # (Optional)
+          # row_condition: "id is not null" # (Optional)
+          # compare_row_condition: "id is not null" # (Optional)
+
+
+    # BOTH SYTANX WORK!
+      # columns: 
+      #- name: price
+      #  tests:
+    columns: 
+      - name: price
+        data_tests:
+        - dbt_expectations.expect_column_quantile_values_to_be_between:
+            arguments:
+              quantile: .95
+              min_value: 50 # (Optional)
+              max_value: 8000 # (Optional)
+              # group_by: [group_id, other_group_id, ...] # (Optional)
+              # row_condition: "id is not null" # (Optional)
+              # strictly: false # (Optional. Default is 'false'. Adds an 'or equal to' to the comparison operator for min/max)
+
+        - dbt_expectations.expect_column_max_to_be_between:
+            arguments:
+              min_value: 1 # (Optional)
+              max_value: 8000 # (Optional)
+              # group_by: [group_id, other_group_id, ...] # (Optional)
+              # row_condition: "id is not null" # (Optional)
+              # strictly: false # (Optional. Default is 'false'. Adds an 'or equal to' to the comparison operator for min/max)
+              config:
+                severity: warn
+
+        - dbt_expectations.expect_column_values_to_be_of_type:
+            arguments:
+              column_type: number
+
+  - name: fct_reviews
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          name: uniqueness_test_review_id
+          arguments:
+            combination_of_columns:
+              - listing_id
+              - review_date
+              - reviewer_name
+              - review_text
+    columns:
+      - name: listing_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_listings_cleansed')
+                field: listing_id
+
+      - name: review_sentiment
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['positive', 'negative', 'neutral']
+
