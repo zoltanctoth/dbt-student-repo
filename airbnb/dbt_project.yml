@@ -1,0 +1,31 @@
+name: airbnb
+
+profile: airbnb
+
+dbt-cloud:
+  project-id: "70506183152626"
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  airbnb:
+    +schema: raw
+
+models:
+  airbnb:
+    +materialized: view
+    dim:
+      +materialized: table
+    src:
+      +materialized: ephemeral
+
+data_tests:
+  +store_failures: true
