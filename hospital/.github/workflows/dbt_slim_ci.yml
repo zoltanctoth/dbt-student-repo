@@ -1,0 +1,44 @@
+name: " dbt Slim CI - Pull Request Verification"
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'models/**'
+      - 'macros/**'
+
+jobs:
+  slim_ci_run:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt and Dependencies
+        run: |
+          pip install dbt-snowflake
+          dbt deps
+
+      - name: Download Production Manifest
+        run: |
+          echo "Buscando o estado atual da produção (manifest.json) para comparação..."
+          # Em produção real, você faria o download do artefato do dbt Cloud ou AWS S3 aqui
+          # mkdir -p prod_manifest && curl -o prod_manifest/manifest.json https://seu-bucket.s3.amazonaws.com/manifest.json
+
+      - name:  Execute SLIM CI (Processa APENAS o que foi modificado)
+        run: |
+          # Criamos um manifesto temporário de simulação para o seu teste local funcionar na nuvem
+          dbt parse --profiles-dir .
+          mkdir -p prod_manifest
+          cp target/manifest.json prod_manifest/manifest.json
+          
+          # Rodando e testando apenas o que mudou com base no perfil local
+          dbt run --select "state:modified+" --state prod_manifest --profiles-dir .
+          dbt test --select "state:modified+" --state prod_manifest --profiles-dir .

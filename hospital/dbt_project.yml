@@ -1,0 +1,76 @@
+name: 'hospital'
+version: '1.0.0'
+config-version: 2
+
+# Perfil de conexao configurado no ~/.dbt/profiles.yml
+profile: 'hospital'
+
+# CONFIGURACAO DE DIRETORIOS E COMPONENTES
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Diretorios limpos automaticamente via comando `dbt clean`
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# =============================================================================
+# GOVERNANCA SNOWFLAKE: Rastreabilidade e Auditoria de Custos (FinOps)
+# =============================================================================
+query-comment:
+  comment: "dbt_run_id: {{ invocation_id }} | user: {{ target.user }}{% if model is defined %} | model: {{ model.name }} | node: {{ model.unique_id }}{% endif %}"
+  append: true
+
+# =============================================================================
+# CONFIGURACOES DE DISPACHO (Precedencia de Macros Globais)
+# =============================================================================
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['hospital', 'dbt_utils']
+
+# =============================================================================
+# ARQUITETURA DE CAMADAS E MATERIALIZACOES (Data Mesh / Star Schema)
+# =============================================================================
+models:
+  hospital:
+    # Camada de Staging: Isolamento e higienizacao das fontes
+    staging:
+      +materialized: view
+      +schema: staging               # Cria automaticamente o sufixo _STAGING no banco
+      +persist_docs:                 # Persiste os comentarios do schema.yml diretamente no Snowflake
+        relation: true
+        columns: true
+      
+    # Camada de Marts: Tabelas Finais prontas para BI, IA e Analytics
+    marts:
+      +materialized: table
+      +schema: marts                 # Cria automaticamente o sufixo _MARTS no banco
+      +persist_docs:
+        relation: true
+        columns: true
+
+# =============================================================================
+# CONFIGURACAO DE SEEDS (Tabelas Estaticas / Referenciais)
+# =============================================================================
+seeds:
+  hospital:
+    +schema: reference               # Envia arquivos de sementes para o esquema _REFERENCE
+    +quote_columns: false            # Evita aspas duplas nos nomes das colunas no Snowflake
+
+# =============================================================================
+# CONFIGURACAO DE SNAPSHOTS (Maquina do Tempo - SCD Tipo 2)
+# =============================================================================
+snapshots:
+  hospital:
+    +schema: snapshots               # Guarda historicos no esquema _SNAPSHOTS
+
+# =============================================================================
+# VARIAVEIS GLOBAIS DE NEGOCIO (Configuracao FinOps Avancada)
+# =============================================================================
+vars:
+  hospital_tax_rate: 0.08            # Taxa de imposto padrao do hospital (8%)
+  timezone_padrao: 'America/Sao_Paulo'
