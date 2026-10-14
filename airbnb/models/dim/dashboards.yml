@@ -1,0 +1,16 @@
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://ef07c7a8.us1a.app.preset.io/superset/dashboard/9/?native_filters_key=QYlnGCr9fiU
+    description: Executive Dashboard about Airbnb listings and hosts
+
+
+    depends_on:
+      - ref('dim_listings_cleansed')
+      - ref('dim_hosts_cleansed')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Elaheh Saberi
