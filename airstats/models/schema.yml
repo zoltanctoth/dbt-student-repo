@@ -1,0 +1,87 @@
+models:
+  - name: silver_airports
+    description: "This table contains information about airports, including their location and other metadata. It is sourced from the raw_airports table and is used for analysis and reporting purposes."
+    
+    data_tests:
+      - minimum_airports_per_state:
+          arguments:
+            min_airports_per_state: 1
+            state_column: iso_region
+          config:
+            severity: warn
+
+    columns:
+      - name: airport_ident
+        data_tests:
+          - not_null
+
+          - relationships:
+              arguments:
+                to: ref('silver_runways')
+                field: airport_ident
+
+              config:
+                severity: warn
+      
+      - name: airport_type
+        data_tests:
+          - not_null
+
+          - accepted_values:
+              arguments:
+                values: ['small_airport', 'heliport', 'closed', 'seaplane_base', 'medium_airport', 'large_airport','balloonport']
+
+        
+  - name: silver_runways
+    description: "This table contains information about runways, including their length, width, and other metadata. It is sourced from the raw_runways table and is used for analysis and reporting purposes."
+    data_tests:
+     - minimum_runway_length:
+            arguments:
+              runway_length_column: runway_length_ft
+              min_runway_length: 20
+            config:
+              severity: warn
+    columns:
+      - name: runway_id
+        data_tests:
+          - not_null
+      
+      - name: airport_ident
+        data_tests:
+          - not_null
+
+          - relationships:
+              arguments:
+                to: ref('silver_airports')
+                field: airport_ident
+              config:
+                severity: warn
+      
+      - name: runway_lighted
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0,1]
+      
+      - name: runway_closed
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0,1]
+
+
+  - name: silver_airport_comments
+    description: "This table contains comments about airports, including user-generated content and other metadata. It is sourced from the raw_airport_comments table and is used for analysis and reporting purposes."
+    columns:
+      - name: comment_id
+        data_tests:
+          - not_null
+      
+      - name: airport_ident
+        data_tests:
+          - not_null
+      
+      - name: comment_body
+        data_tests:
+          - not_null
+      

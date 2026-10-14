@@ -1,0 +1,17 @@
+
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://6adf17aa.us2a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=XrcMrEVeXbc
+    description: Executive Dashboard about Airbnb listings and hosts
+
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Caden Clawson
+      email: clawsoncaden3@gmail.com

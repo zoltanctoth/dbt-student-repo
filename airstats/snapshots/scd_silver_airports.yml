@@ -1,0 +1,8 @@
+snapshots:
+    - name: scd_silver_airports
+      relation: ref('silver_airports')
+      config:
+        unique_key: airport_ident
+        strategy: check
+        check_cols: all
+        
