@@ -1,0 +1,7 @@
+
+target/
+dbt_packages/
+logs/
+dbt_internal_packages/
+node_modules/
+.altimate/

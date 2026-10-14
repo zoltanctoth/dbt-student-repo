@@ -1,0 +1,8 @@
+sources:
+  - name: airstats
+    schema: raw
+    tables:
+      - name: comments
+        identifier: airport_comments
+      - name: airports
+        identifier: airports
