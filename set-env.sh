@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Source this file before running dbt:
+#   . set-env.sh
+#   or . ../set-env.sh if you run it from the airbnb/ folder.
+# !! Do this every time you open a new terminal, as env vars are not persisted !!
+
+export SNOWFLAKE_ACCOUNT="zowlbfc-jw83957"
+export DBT_USER="dbt"
+export PRIVATE_KEY_PASSPHRASE="q"
+export PRIVATE_KEY="-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIFNTBfBgkqhkiG9w0BBQ0wUjAxBgkqhkiG9w0BBQwwJAQQimdQf1Kwgo+I3iJ/
+Rk3niAICCAAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEECmg7ZS/vBfoI+pW
+pb6TJgcEggTQrOml8FDhkalMLfCMjQPGkM7YIFsyCsNg+kwxTffDh4BiiDenPRQy
+SxIfeX9ywC6Br2zxMzuJ/RXJP+agoVFrq83GdSPCVOgF4egNvD71WXS6qs1aLn3M
+VXFEqMP1TD7avEb5/qwrb1HQXt4B7SgseCHtmz/hyouIBzaT9o7iVathT8HEEnA/
+uM7bZpqseY++xldJgbfEZTaMrvNqTOEnrdXX31Obdy/puL/jw+LPGIxR5JrrRbKi
+KTqFgsYOnhlF4mQgeWpww9NGmlnGV7bXuqXJfv42Cr+r1NPpuMIfBkFIao3wCrlh
+PGhqIftiCEAvihmiZqaz+mUJ6rHw2AcICwTIW/xRMKyiHWiuWcwZlQgRUjU43b+n
+dbLG+yDdvQKQCw2V64Q60JdDPO1izHHHVWEeCq/jOQYXiZz+9LnxLqAeZWH0vwMT
+uBQW3gUiel7O8gofxtND/Lm5zCMTV1/W11SMmFgoBagkPOdNCWEhJW/2ex930WZL
+8Y33Lkf+IroVOkftjFoFLsH0sXM8VrkXOuMZ792rIAj/WfooszR1bp/DntjWFzeb
+ONB7sh3Wf1RnKqUwsYkC5D5mwI+zKGZD4znXD6gBev+U756ukt6NZlE2NWFDU3Rx
+Am1WB9PHztwLGDiySG6qYt3kcEneyF4aQMIeCmTTzMso6Sr3hWYw+k0Fl1EijeTP
+LZjiy4Ze+6QPwhdSwdr7wcl1FzUFHxNBdNOV5Nt4uXzqovL63Xyrl0RJIU2GTBYh
+UtU8l/PXjhS/olAdRi3bAcZRblMbd/dGV5sz/XGBOSBeFSuJ2IFHApcvYfc+sLpP
+Bxg8QMIO7JUej8ESdpFX8hY+wZzQq4yp7my77rdILsv3dEPsIRDsX1rUbhsTXZQ0
+7DCOMWfPgp7pP33PqPqJiFOG7gQJ9vkCOtOKZr6/wg/vLlJUo3zxNASYsg7qMYhm
+pUJPdT8eW8cCdNLoWpcSnpHz5ada3IJqgH5CoVDW+NI7DDzrfB/CAFFI4qEBF0bc
+nJhs7M8pQDth6KFBd8Pub6+lp+KW9l0ZIcJ6q0SMZ0MBRNYrk7gffbi+5ElSkAiP
+o18tUOz/r6MGNGEHoR+FX+8+2BHtNBnWKIvmenFZ3anyBzrdCMIuoR7kSbZJdL0B
+BBxctamYVahsA9ecUB9xDf2aZXnftHg6IZ+3YK4gokokmW5nnvuZ0sYPCyUWmuqU
++KzBkoZ172qhYByLrBN6wMX5Gf8C0OeIP8tcL7eRv7bHDIsNkaTcycX11EIRhGmd
+qBRu5AgZTop2+iEcmDkrhXyl9HLuRZuVjibaDJbDnLk9bsMAJ9gPVpRkqd/ehGx7
+68X7RflqS0UsHJFhZSHVDl3t9JRZ477ZxXLkrbPZyZM5dTPQjidXQvSb7SsGoxgf
+m6jjwAhsUzmIBacFPF9V/vxd2ZssumtQe0yMD9wmj8AQ4Cg0b7OWprU7nCHBIwVh
+EJvD8g1Qdoez/GEl4Ctv/Uv4+5meUKH9OedpzoTAfZQSBGTNxPu/iXlY2LtyL4fQ
+EyKlbN77uKcTZ4Tj+qDDvXM+BZie1UlQRTCl/XBYLiGYLcDT/wx7XavlBzDrMjoo
+bRSU7wxje+PzuUZ6tQBEAoKTOBHshY+jG2p5YZs5zKQYnttpQIdrn6o=
+-----END ENCRYPTED PRIVATE KEY-----
+"
