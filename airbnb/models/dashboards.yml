@@ -1,0 +1,16 @@
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://2972f400.us2a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=oqHrvnioRsA
+    description: Executive Dashboard about Airbnb listings and hosts
+
+
+    depends_on:
+      - ref('dim_listings_w_hosts')
+      - ref('mart_fullmoon_review')
+
+    owner:
+      name: Moko
+      email: muhammadkorkor94@gmail.com
