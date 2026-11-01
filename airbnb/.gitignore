@@ -2,6 +2,6 @@
 target/
 dbt_packages/
 logs/
-profiles.yml
+/profiles.yml
 .user.yml
 preset-instructions.md
