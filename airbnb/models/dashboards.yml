@@ -1,0 +1,15 @@
+exposures:
+  - name: executive_dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://89db9841.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=LUbRp04FCPstchP0Xc2PBA
+    description: Executive Dashboard about Airbnb
+
+
+    depends_on:
+      - ref('mart_fullmoon_reviews')
+
+    owner:
+      name: Sarunas
+      email: sarunas856@gmail.com
