@@ -1,4 +1,4 @@
-from texblob import TextBlob
+from textblob import TextBlob
  
 
 def get_sentiment(text):
@@ -7,7 +7,7 @@ def get_sentiment(text):
 def model(dbt, session):
     dbt.config(
         materialized="table",
-        packages=["texblob", "snowflake-connector-python[pandas]"]
+        packages=["textblob", "snowflake-connector-python[pandas]"]
         # enabled=False # We are adding this line in the Model Lifecycle / Disabling Models section
     )
 

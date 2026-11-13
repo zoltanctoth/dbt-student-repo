@@ -1,7 +1,3 @@
-# Reference only
-# Please go to https://github.com/zoltanctoth/dbt-reference-production-repo
-# for a latest working example of this file
-
 name: PR slim CI (defer to prod artifact)
 
 on:
@@ -18,11 +14,10 @@ jobs:
     if: github.repository != 'zoltanctoth/complete-dbt-bootcamp-zero-to-hero'
     runs-on: ubuntu-latest
     env:
-      SNOWFLAKE_ACCOUNT:      "${{ secrets.SNOWFLAKE_ACCOUNT }}"
-      DBT_USER:               "${{ secrets.DBT_USER }}"
-      PRIVATE_KEY: |
-        ${{ secrets.PRIVATE_KEY }}
-      PRIVATE_KEY_PASSPHRASE: "${{ secrets.PRIVATE_KEY_PASSPHRASE }}"
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      DBT_USER: ${{ secrets.DBT_USER }}
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      PRIVATE_KEY_PASSPHRASE: ${{ secrets.PRIVATE_KEY_PASSPHRASE }}
 
     steps:
       - uses: actions/checkout@v6
@@ -33,11 +28,18 @@ jobs:
       - run: uv python install 3.13
       - run: uv sync
       - name: Set DBT_ENV_NAME from branch (uppercase, _ for / and -)
+        env:
+          HEAD_REF: ${{ github.head_ref }}
         run: |
-          NAME="${{ github.head_ref }}"
-          SANITIZED=$(echo "$NAME" | tr '/' '_' | tr '-' '_' | tr '[:lower:]' '[:upper:]')
+          SANITIZED=$(echo "$HEAD_REF" | tr '/-' '__' | tr '[:lower:]' '[:upper:]')
           echo "DBT_ENV_NAME=$SANITIZED" >> "$GITHUB_ENV"
           echo "PR will build into schema: DBT_$SANITIZED"
+      - name: Check secrets format (no key content printed)
+        run: |
+          echo "$PRIVATE_KEY" | head -1
+          echo "$PRIVATE_KEY" | tail -1
+          echo "lignes: $(echo "$PRIVATE_KEY" | wc -l)"
+          test -n "$DBT_USER" && echo "DBT_USER ok"
       - run: cd airbnb && uv run dbt deps --profiles-dir _prod_profiles --target dev
       - name: Download latest prod-target artifact from main
         uses: dawidd6/action-download-artifact@v21
@@ -47,7 +49,7 @@ jobs:
           name: prod-target
           path: airbnb/prod-target
           if_no_artifact_found: fail
-      - name: dbt build (slim CI if manifest available, else full)
+      - name: dbt build (slim CI)
         run: |
           cd airbnb
           uv run dbt build --profiles-dir _prod_profiles --target dev \

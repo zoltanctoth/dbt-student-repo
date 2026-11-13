@@ -1,7 +1,3 @@
-# Reference only
-# Please go to https://github.com/zoltanctoth/dbt-reference-production-repo
-# for a latest working example of this file
-
 name: Prod deploy (on merge to main / manual)
 
 on:
@@ -19,11 +15,11 @@ jobs:
     if: github.repository != 'zoltanctoth/complete-dbt-bootcamp-zero-to-hero'
     runs-on: ubuntu-latest
     env:
-      SNOWFLAKE_ACCOUNT:      "${{ secrets.SNOWFLAKE_ACCOUNT }}"
-      DBT_USER:               "${{ secrets.DBT_USER }}"
-      PRIVATE_KEY: |
-        ${{ secrets.PRIVATE_KEY }}
-      PRIVATE_KEY_PASSPHRASE: "${{ secrets.PRIVATE_KEY_PASSPHRASE }}"
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      DBT_USER: ${{ secrets.DBT_USER }}
+      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      PRIVATE_KEY_PASSPHRASE: ${{ secrets.PRIVATE_KEY_PASSPHRASE }}
+      DBT_ENV_NAME: PROD
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v7
