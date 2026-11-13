@@ -1,0 +1,7 @@
+target/
+dbt_packages/
+logs/
+set-env.sh
+set-env.ps1
+.user.yml
+airbnb/target-prod/
