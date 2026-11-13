@@ -15,7 +15,7 @@ def model(dbt, session):
 
     df = reviews_df.to_pandas()
 
-    df["SENTIMENT_SCORE"] = df["REVIEW_TEXTE"].apply(get_sentiment)
+    df["SENTIMENT_SCORE"] = df["REVIEW_TEXT"].apply(get_sentiment)
 
     # return final dataset (Pandas DataFrame)
     return df
