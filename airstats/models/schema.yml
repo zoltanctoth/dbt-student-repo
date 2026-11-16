@@ -1,0 +1,81 @@
+models:
+  - name: silver_airport_comments
+    description: List of all the comments written regarding the airports.
+    columns:
+      - name: comment_id
+        description: Primary key for the listing
+        data_tests:
+          - unique
+          - dbt_expectations.expect_column_values_to_not_be_null: 
+              arguments:
+                row_condition: "comment_id is not null"
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+                max_value: 50000
+
+      - name: airport_ident
+        description: The airport's id.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('silver_runways')
+                field: airport_ident
+              config:
+                severity: warn
+
+      - name: comment_timestamp
+        description: Writing's date.
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              arguments:
+                column_type: date
+
+      - name: member_nickname
+        description: Name of the comment's author.
+        data_type: text
+
+      - name: comment_subject
+        description: Subject of the comment.
+        data_type: text
+
+      - name: comment_body
+        description: This is the comment.
+        data_type: text
+
+      - name: loaded_at
+        description: Insertion's date of the line.
+        data_type: timestamp
+
+  - name: silver_airports
+    columns:
+    - name: airport_ident
+      description: The airport's id.
+      data_tests:
+      - relationships:
+          arguments:
+            to: ref('silver_runways')
+            field: airport_ident
+          config:
+            severity: warn
+
+    - name: airport_type
+      description: Airport's Type.
+      data_tests:
+        - accepted_values:
+            arguments:
+              values: ['closed', 'heliport', 'small_airport', 'seaplane_base', 'balloonport', 'medium_airport', 'large_airport']
+      data_type: text
+
+  - name: silver_runways
+    description: '{{doc("silver_runways")}}'
+    columns:
+    - name: airport_ident
+      description: The airport's id.
+      data_tests:
+      - relationships:
+          arguments:
+            to: ref('silver_airports')
+            field: airport_ident
+          config:
+            severity: warn

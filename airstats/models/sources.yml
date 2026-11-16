@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: airstats
+    schema: raw
+    tables:
+      - name: airports
+      - name: airport_comments
+      - name: runways

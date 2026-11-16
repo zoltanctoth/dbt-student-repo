@@ -41,7 +41,7 @@ models:
     +grants: 
       select : ["transform", "reporter"]
     +post-hook:
-      - "INSERT INTO audit_log VALUES ('{{this}}', CURRENT_TIMESTAMP)"
+      - "INSERT INTO {{ target.database }}.{{ target.schema }}.audit_log VALUES ('{{ this.name }}', CURRENT_TIMESTAMP)"
     +materialized: view
     dim:
       +materialized: table

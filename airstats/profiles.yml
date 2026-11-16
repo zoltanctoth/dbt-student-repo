@@ -1,0 +1,16 @@
+airstats:
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('DBT_USER') }}"
+
+      role: TRANSFORM
+      private_key: "{{ env_var('PRIVATE_KEY') }}"
+      private_key_passphrase: "{{ env_var('PRIVATE_KEY_PASSPHRASE') }}"
+
+      database: AIRSTATS
+      schema: DEV
+      threads: 1
+      warehouse: COMPUTE_WH
+  target: dev

@@ -5,3 +5,9 @@ set-env.sh
 set-env.ps1
 .user.yml
 airbnb/target-prod/
+airstats/target/
+airstats/dbt_packages/
+airstats/logs/
+airstats/.user.yml
+my_dbt_dagster_project/.tmp_dagster_home_*/
+__pycache__/

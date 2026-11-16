@@ -1,7 +1,7 @@
-vesrion: 2
+version: 2
 
 exposures:
-  - name: Executive Dashboard
+  - name: Executive_Dashboard
     type: dashboard
     maturity: low
     url: https://1478e19a.us1a.app.preset.io/superset/dashboard/8/?native_filters_key=doOIwD10cWlqtD_wbk-wWg
