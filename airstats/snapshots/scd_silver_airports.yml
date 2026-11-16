@@ -1,0 +1,16 @@
+snapshots:
+- name: scd_silver_airports
+  relation: source('airstats', 'airports')
+  config:
+    schema: raw
+    unique_key: ident
+    strategy: check
+    check_cols:
+      - type
+      - name
+      - latitude_deg
+      - longitude_deg
+      - elevation_ft
+      - continent
+      - iso_country
+      - iso_region

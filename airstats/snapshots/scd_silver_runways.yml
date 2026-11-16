@@ -1,0 +1,15 @@
+snapshots:
+- name: scd_silver_runways
+  relation: source('airstats', 'runways')
+  config:
+    schema: raw
+    unique_key: id
+    strategy: check
+    check_cols:
+      - id
+      - airport_ident
+      - length_ft
+      - width_ft
+      - surface
+      - lighted
+      - closed
