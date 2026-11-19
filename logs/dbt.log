@@ -1,0 +1,137 @@
+[0m13:36:05.311417 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112125c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ce3010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121caa10>]}
+
+
+============================== 13:36:05.312722 | 5f58832b-9a47-47d3-bb10-bab6f7139711 ==============================
+[0m13:36:05.312722 [info ] [MainThread]: Running with dbt=1.11.2
+[0m13:36:05.312951 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'empty': 'None', 'log_format': 'default', 'version_check': 'True', 'partial_parse': 'True', 'invocation_command': 'dbt init --skip-profile-setup airbnb', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'use_colors': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'debug': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'introspect': 'True', 'write_json': 'True', 'profiles_dir': '/Users/sagar/.dbt', 'quiet': 'False', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_path': 'logs', 'indirect_selection': 'eager'}
+[0m13:36:05.336241 [debug] [MainThread]: Starter project path: /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m13:36:05.338988 [info ] [MainThread]: 
+Your new dbt project "airbnb" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:36:05.819100 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.535041, "process_in_blocks": "0", "process_kernel_time": 0.082407, "process_mem_max_rss": "112738304", "process_out_blocks": "0", "process_user_time": 0.489328}
+[0m13:36:05.819593 [debug] [MainThread]: Command `dbt init` succeeded at 13:36:05.819509 after 0.54 seconds
+[0m13:36:05.819872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121f3f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121b8810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105070a50>]}
+[0m13:36:05.820127 [debug] [MainThread]: Flushing usage events
+[0m13:36:06.664555 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:41:35.123950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10742f610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1070ce610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074dabd0>]}
+
+
+============================== 13:41:35.125289 | 834b5390-6cfa-44d3-a780-b7961dbd3139 ==============================
+[0m13:41:35.125289 [info ] [MainThread]: Running with dbt=1.11.2
+[0m13:41:35.125523 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'write_json': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'partial_parse': 'True', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'fail_fast': 'False', 'quiet': 'False', 'log_path': 'logs', 'log_cache_events': 'False', 'use_colors': 'True', 'introspect': 'True', 'profiles_dir': '/Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo', 'target_path': 'None', 'empty': 'None', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'use_experimental_parser': 'False', 'static_parser': 'True'}
+[0m13:41:35.130670 [info ] [MainThread]: dbt version: 1.11.2
+[0m13:41:35.130806 [info ] [MainThread]: python version: 3.11.0
+[0m13:41:35.130974 [info ] [MainThread]: python path: /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/.venv/bin/python
+[0m13:41:35.131104 [info ] [MainThread]: os info: macOS-15.7.3-arm64-arm-64bit
+[0m13:41:35.223040 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:41:35.223256 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:41:35.223368 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:41:35.246185 [info ] [MainThread]: Using profiles dir at /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo
+[0m13:41:35.246346 [info ] [MainThread]: Using profiles.yml file at /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/profiles.yml
+[0m13:41:35.246470 [info ] [MainThread]: Using dbt_project.yml file at /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/dbt_project.yml
+[0m13:41:35.246631 [info ] [MainThread]: adapter type: snowflake
+[0m13:41:35.246729 [info ] [MainThread]: adapter version: 1.11.1
+[0m13:41:35.246828 [info ] [MainThread]: Configuration:
+[0m13:41:35.246919 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:41:35.247007 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:41:35.247097 [info ] [MainThread]: Required dependencies:
+[0m13:41:35.247210 [debug] [MainThread]: Executing "git --help"
+[0m13:41:35.258714 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:41:35.259073 [debug] [MainThread]: STDERR: "b''"
+[0m13:41:35.259224 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:41:35.259358 [info ] [MainThread]: Connection:
+[0m13:41:35.259503 [info ] [MainThread]:   account: mieuqvi-pt37217
+[0m13:41:35.259602 [info ] [MainThread]:   user: dbt
+[0m13:41:35.259692 [info ] [MainThread]:   database: AIRBNB
+[0m13:41:35.259783 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m13:41:35.259873 [info ] [MainThread]:   role: TRANSFORM
+[0m13:41:35.259982 [info ] [MainThread]:   schema: DEV
+[0m13:41:35.260068 [info ] [MainThread]:   authenticator: None
+[0m13:41:35.260177 [info ] [MainThread]:   oauth_client_id: None
+[0m13:41:35.260265 [info ] [MainThread]:   query_tag: None
+[0m13:41:35.260352 [info ] [MainThread]:   client_session_keep_alive: False
+[0m13:41:35.260443 [info ] [MainThread]:   host: None
+[0m13:41:35.260531 [info ] [MainThread]:   port: None
+[0m13:41:35.260615 [info ] [MainThread]:   proxy_host: None
+[0m13:41:35.260703 [info ] [MainThread]:   proxy_port: None
+[0m13:41:35.260785 [info ] [MainThread]:   protocol: None
+[0m13:41:35.260871 [info ] [MainThread]:   connect_retries: 1
+[0m13:41:35.260955 [info ] [MainThread]:   connect_timeout: None
+[0m13:41:35.261041 [info ] [MainThread]:   retry_on_database_errors: False
+[0m13:41:35.261125 [info ] [MainThread]:   retry_all: False
+[0m13:41:35.261210 [info ] [MainThread]:   insecure_mode: False
+[0m13:41:35.261294 [info ] [MainThread]:   reuse_connections: True
+[0m13:41:35.261380 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m13:41:35.261470 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m13:41:35.261679 [info ] [MainThread]: Registered adapter: snowflake=1.11.1
+[0m13:41:35.310275 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m13:41:35.335292 [debug] [MainThread]: Using snowflake connection "debug"
+[0m13:41:35.335423 [debug] [MainThread]: On debug: select 1 as id
+[0m13:41:35.335515 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:41:37.250312 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.915 seconds
+[0m13:41:37.252567 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:41:37.253083 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:41:37.253387 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/dbt_project.yml> not found
+
+[0m13:41:37.256290 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.1606414, "process_in_blocks": "0", "process_kernel_time": 0.149539, "process_mem_max_rss": "160546816", "process_out_blocks": "0", "process_user_time": 0.862721}
+[0m13:41:37.256999 [debug] [MainThread]: Command `dbt debug` failed at 13:41:37.256891 after 2.16 seconds
+[0m13:41:37.257804 [debug] [MainThread]: Connection 'debug' was left open.
+[0m13:41:37.258185 [debug] [MainThread]: On debug: Close
+[0m13:41:37.825031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074800d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ad3190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ade9ad0>]}
+[0m13:41:37.826181 [debug] [MainThread]: Flushing usage events
+[0m13:41:38.646450 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:43:09.207586 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1088b2790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b8a790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b11890>]}
+
+
+============================== 13:43:09.208977 | b647603c-88a8-46cf-9a11-1b248d341546 ==============================
+[0m13:43:09.208977 [info ] [MainThread]: Running with dbt=1.11.2
+[0m13:43:09.209223 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'use_colors': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'target_path': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'debug': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'profiles_dir': '/Users/sagar/.dbt', 'warn_error': 'None', 'introspect': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'log_path': 'logs', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'empty': 'None'}
+[0m13:43:09.212403 [info ] [MainThread]: dbt version: 1.11.2
+[0m13:43:09.212542 [info ] [MainThread]: python version: 3.11.0
+[0m13:43:09.212658 [info ] [MainThread]: python path: /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/.venv/bin/python
+[0m13:43:09.212757 [info ] [MainThread]: os info: macOS-15.7.3-arm64-arm-64bit
+[0m13:43:09.212871 [info ] [MainThread]: Using profiles dir at /Users/sagar/.dbt
+[0m13:43:09.212974 [info ] [MainThread]: Using profiles.yml file at /Users/sagar/.dbt/profiles.yml
+[0m13:43:09.213071 [info ] [MainThread]: Using dbt_project.yml file at /Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/dbt_project.yml
+[0m13:43:09.213177 [info ] [MainThread]: Configuration:
+[0m13:43:09.213266 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m13:43:09.213397 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:43:09.213540 [info ] [MainThread]: Required dependencies:
+[0m13:43:09.213681 [debug] [MainThread]: Executing "git --help"
+[0m13:43:09.223985 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:43:09.224344 [debug] [MainThread]: STDERR: "b''"
+[0m13:43:09.224442 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:43:09.224550 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m13:43:09.224702 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m13:43:09.224802 [info ] [MainThread]: dbt looked for a profiles.yml file in /Users/sagar/.dbt/profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m13:43:09.224903 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/sagar/Documents/Academic/Courses/DBT/dbt-student-repo/dbt_project.yml> not found
+
+[0m13:43:09.225791 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.046545874, "process_in_blocks": "0", "process_kernel_time": 0.077069, "process_mem_max_rss": "107954176", "process_out_blocks": "0", "process_user_time": 0.489544}
+[0m13:43:09.225973 [debug] [MainThread]: Command `dbt debug` failed at 13:43:09.225937 after 0.05 seconds
+[0m13:43:09.226145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bd7850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b1c490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bd7f50>]}
+[0m13:43:09.226282 [debug] [MainThread]: Flushing usage events
+[0m13:43:10.060227 [debug] [MainThread]: An error was encountered while trying to flush usage events
