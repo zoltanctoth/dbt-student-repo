@@ -1,0 +1,16 @@
+models:
+  - name: dim_listings_cleansed
+    columns:
+      - name: listing_id
+        tests:
+          - unique
+          - not_null
+
+      - name: room_type
+        tests:
+          - accepted_values:
+              values:
+                - 'Entire home/apt'
+                - 'Private room'
+                - 'Shared room'
+                - 'Hotel room'
