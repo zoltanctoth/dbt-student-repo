@@ -13,6 +13,7 @@ SELECT
     listings_cleansed.minimum_nights,
     listings_cleansed.price,
     listings_cleansed.host_id,
+    listings_cleansed.price_str,
     hosts_cleansed.host_name,
     hosts_cleansed.is_superhost AS host_is_superhost,
     listings_cleansed.created_at,
